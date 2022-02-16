@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Formulario con Flask</title>
+    </head>
+    <body>
+        <form method="POST" action="{{url_for('procesar')}}">
+            
+            <!-- <input name="num1" required type="number" placeholder="Numero 1">
+            <br><br>
+            <input name="num2" required type="number" placeholder="Numero 2">
+            <br><br> -->
+            <!-- <strong>RESULTADO: </strong>{{resultado}} -->
+            <br><br>
+            <!-- <textarea  id="txt1" name="texto_hilo" placeholder="Ingresar valores" >{{resultado}}</textarea>  -->
+            <input id="txt1" type="txt" name="texto_hilo" value="{{resultado}}">
+            <br><br>
+        
+
+            <input type="button" value="+" name="button" onclick="myFunction('+')">
+            <input type="button" value="-" name="button" onclick="myFunction('-')">
+            <input type="button" value="*" name="button" onclick="myFunction('*')">
+            <input type="button" value="/" name="button" onclick="myFunction('/')">
+            <br><br>
+            <input type="button" value="7" name="button" onclick="myFunction(7)">
+            <input type="button" value="8" name="button" onclick="myFunction(8)">
+            <input type="button" value="9" name="button" onclick="myFunction(9)">
+            <input type="button" value="0" name="button" onclick="myFunction(0)">
+            <br><br>
+            <input type="button" value="4" name="button" onclick="myFunction(4)">
+            <input type="button" value="5" name="button" onclick="myFunction(5)">
+            <input type="button" value="6" name="button" onclick="myFunction(6)">
+            <input type="submit" value="=" name="submit" onclick="Resolver()">
+            <br><br>
+
+            <input type="button" value="1" name="button" onclick="myFunction(1)">
+            <input type="button" value="2" name="button" onclick="myFunction(2)">
+            <input type="button" value="3" name="button" onclick="myFunction(3)">
+            <input type="button" value="Del" name="button" onclick="deleteOne()">
+            <input type="button" value="C" name="button" onclick="deleteAll()">
+          
+
+            <script > 
+                
+                let lista=[]
+
+                // function Resolver() {
+                // let nuevaLongitud = lista.push("{{resultado}}")
+                // var cadena = new String(lista);
+                // cadena = cadena.replace(/,/g, "");
+                // document.getElementById("txt1").value = cadena}
+
+                function myFunction(arg) {
+                let nuevaLongitud = lista.push(arg)
+                var cadena = new String(lista);
+                cadena = cadena.replace(/,/g, "");
+                document.getElementById("txt1").value = cadena}
+
+
+                function deleteAll(){
+                lista = []
+                var cadena = new String(lista);
+                cadena = cadena.replace(/,/g, "");
+                document.getElementById("txt1").value =cadena}
+
+
+                function deleteOne(){
+                let ultimo = lista.pop()
+                var cadena = new String(lista);
+                cadena = cadena.replace(/,/g, "");
+                document.getElementById("txt1").value =cadena}
+
+       
+            </script>
+
+            
+              
+            
+        </form>
+
+        
+        
+       
+    </body>
+</html>
